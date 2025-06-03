@@ -11,6 +11,9 @@ from urllib.parse import parse_qsl
 
 import os
 
+app = Flask(__name__)
+
+
 line_bot_api = LineBotApi(os.getenv('Channel_Access_Token'))
 handler = WebhookHandler(os.getenv('Channel_Secret'))
 
