@@ -202,7 +202,7 @@ def sendYes(event):
 
 def sendBack_buy(event, backdata):
     try:
-        text1 = '感謝您選擇fwee，我們將盡快為您寄出。\n(action 的值為 ' 
+        text1 = '感謝您選擇fwee，我們將盡快為您寄出。' 
         message = TextSendMessage(text=text1)
         line_bot_api.reply_message(event.reply_token, message)
     except:
