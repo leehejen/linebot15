@@ -164,15 +164,15 @@ def sendImgCarousel(event):
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
-                            label='文字訊息',
-                            text='唇彩'
+                            label='唇彩',
+                            text='為您推薦熱門唇彩'
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/qaAdBkR.png',
                         action=PostbackTemplateAction(
-                            label='回傳訊息',
-                            data='action=sell&item=底妝'
+                            label='底妝',
+                            data='action=sell&item=為您推薦熱門底妝'
                         )
                     )
                 ]
