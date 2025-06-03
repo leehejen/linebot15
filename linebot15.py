@@ -121,7 +121,7 @@ def sendCarousel(event):
                             ),
                             URITemplateAction(
                                 label='連結進入fwee的世界',
-                                uri='https://fwee.kr/index.html'
+                                uri='https://fwee.kr/product/list.html?cate_no=30'
                             ),
                             PostbackTemplateAction(
                                 label='回傳訊息一',
@@ -139,7 +139,7 @@ def sendCarousel(event):
                                 text='fwee輕薄透亮底妝'
                             ),
                             URITemplateAction(
-                                label='連結網頁',
+                                label='連結進入fwee的世界',
                                 uri='https://fwee.kr/product/list.html?cate_no=53'
                             ),
                             PostbackTemplateAction(
@@ -202,8 +202,7 @@ def sendYes(event):
 
 def sendBack_buy(event, backdata):
     try:
-        text1 = '感謝您選擇fwee，我們將盡快為您寄出。\n(action 的值為 ' + backdata.get('action') + ')'
-        text1 += '\n(可將處理程式寫在此處。)'
+        text1 = '感謝您選擇fwee，我們將盡快為您寄出。\n(action 的值為 ' 
         message = TextSendMessage(text=text1)
         line_bot_api.reply_message(event.reply_token, message)
     except:
