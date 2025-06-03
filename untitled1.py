@@ -11,8 +11,9 @@ from urllib.parse import parse_qsl
 
 import os
 
-line_bot_api = LineBotApi(os.getenv('HuWxc8fFRyMi2TCyvDucYdjyHMUlzbw0YamXjSpdwxSr6m8IphcK76bbWE4IAX6BlhC7b53dzzQoqjUuGcuD6mE9ZKefpNvsORS2/2lLrAnc04AGR1ztdWhtXXp8/LQnDJicDyLHH4z8gHLNrxlBVAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler(os.getenv('a72e15959ecf0f4b7f5396adfaec8878')
+line_bot_api = LineBotApi(os.getenv('Channel_Access_Token'))
+handler = WebhookHandler(os.getenv('Channel_Secret'))
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
