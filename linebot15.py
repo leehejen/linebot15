@@ -43,7 +43,7 @@ def handle_message(event):
         sendImgCarousel(event)
     elif msg == '@最新資訊':
         sendButton(event)
-     elif msg == '@yes':
+    elif msg == '@yes':
         sendYes(event)
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入指定指令。'))
