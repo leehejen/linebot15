@@ -121,7 +121,7 @@ def sendCarousel(event):
                             ),
                             URITemplateAction(
                                 label='連結進入fwee的世界',
-                                uri='https://fwee.kr/product/list.html?cate_no=30'
+                                uri='https://shopee.tw/fwee.official.tw?shopCollection=251062841#product_list'
                             ),
                             PostbackTemplateAction(
                                 label='回傳訊息一',
