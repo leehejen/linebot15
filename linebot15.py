@@ -32,7 +32,7 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if msg == '@fwee':
-        sendPizza(event)
+        sendFweeRecommend(event)
     elif msg == '@進度查詢':
         sendYes(event)
     elif msg == '@商品推薦':
@@ -182,21 +182,44 @@ def sendImgCarousel(event):
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-def sendPizza(event):
+from linebot.models import FlexSendMessage
+
+def sendFweeRecommend(event):
     try:
-        message = TextSendMessage(
-            text='I am fwee Feel Your Moment, fwee',
-             template=ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/WzybsBHP/temp-Image-A3-Aw-Ir.avif',
-                        action=URITemplateAction(
-                            label='go',
-                            uri='https://fwee.kr/?srsltid=AfmBOoqyH6sukQDBVX4PIqzbPGbE-3N5lqu-3t9JKbNtqaMR_m_00x_d'
-                            )
-             )
+        message = FlexSendMessage(
+            alt_text='@fwee',
+            contents={
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "Feel Your Moment, fwee",
+                            "weight": "bold",
+                            "size": "lg",
+                            "wrap": True
+                        },
+                        {
+                            "type": "image",
+                            "url": "https://i.postimg.cc/WzybsBHP/temp-Image-A3-Aw-Ir.avif",
+                            "size": "full",
+                            "aspectRatio": "20:13",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://fwee.kr/?srsltid=AfmBOoqyH6sukQDBVX4PIqzbPGbE-3N5lqu-3t9JKbNtqaMR_m_00x_d"
+                            },
+                            "margin": "md"
+                        }
+                    ]
+                }
+            }
         )
         line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+    except Exception as e:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
 
 def sendYes(event):
     try:
