@@ -185,7 +185,7 @@ def sendImgCarousel(event):
 def sendPizza(event):
     try:
         message = TextSendMessage(
-            text='I am fwee Feel Your Moment, fwee'
+            text='I am fwee Feel Your Moment, fwee',
              template=ImageCarouselColumn(
                         image_url='https://i.postimg.cc/WzybsBHP/temp-Image-A3-Aw-Ir.avif',
                         action=URITemplateAction(
