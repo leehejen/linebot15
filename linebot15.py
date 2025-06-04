@@ -186,6 +186,11 @@ def sendPizza(event):
     try:
         message = TextSendMessage(
             text='I am fwee Feel Your Moment, fwee'
+             template=ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/WzybsBHP/temp-Image-A3-Aw-Ir.avif',
+                        action=URITemplateAction(
+                            label='go',
+                            uri='https://fwee.kr/?srsltid=AfmBOoqyH6sukQDBVX4PIqzbPGbE-3N5lqu-3t9JKbNtqaMR_m_00x_d'
         )
         line_bot_api.reply_message(event.reply_token, message)
     except:
