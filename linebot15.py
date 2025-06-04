@@ -34,7 +34,7 @@ def handle_message(event):
     if msg == '@fwee':
         sendFweeRecommend(event)
     elif msg == '@進度查詢':
-        sendBack_buy(event, backdata
+        sendBack_buy(event, backdata)
     elif msg == '@商品推薦':
         sendCarousel(event)
     elif msg == '@訂單確認':
