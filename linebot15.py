@@ -232,7 +232,7 @@ def sendYes(event):
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-def sendBack_buy(event, backdata):
+def sendBack_buy(event):
     try:
         message = TextSendMessage(
             text='感謝您的購買，商品將盡快寄出'
