@@ -65,7 +65,7 @@ def sendButton(event):
                 actions=[
                      URITemplateAction(
                         label='賣場連結',
-                        uri=''https://shopee.tw/fwee.official.tw'
+                        uri='https://shopee.tw/fwee.official.tw'
                     ),
                     URITemplateAction(
                         label='官網連結',
