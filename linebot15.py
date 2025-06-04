@@ -232,8 +232,15 @@ def sendYes(event):
 
 def sendBack_buy(event, backdata):
     try:
-        text1 = '感謝您選擇fwee，我們將盡快為您寄出。' 
-        message = TextSendMessage(text=text1)
+        message = TextSendMessage(
+            text='感謝您的購買，商品將盡快寄出‘
+                 '🧾 訂單查詢結果如下：\n\n'
+                 '📦 訂單編號：#FWEE20250603\n'
+                 '💄 購買產品：fwee 熱賣系列唇彩 - 柔霧玫瑰\n'
+                 '🚚 出貨狀態：已出貨（黑貓宅急便）\n'
+                 '📅 出貨日期：2025/06/03\n'
+                 '🔍 查詢連結：\nhttps://shopee.tw/user/purchase/list'
+        )
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
