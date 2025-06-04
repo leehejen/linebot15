@@ -111,7 +111,7 @@ def sendCarousel(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://ibb.co/JjCCvcbr',
+                        thumbnail_image_url='https://i.postimg.cc/sDRXt9tZ/temp-Imageg1m-UZf.avif',
                         title='唇彩',
                         text='讓fwee更貼近你的心情',
                         actions=[
