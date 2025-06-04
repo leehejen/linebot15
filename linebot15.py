@@ -59,7 +59,7 @@ def sendButton(event):
         message = TemplateSendMessage(
             alt_text='按鈕樣板',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                thumbnail_image_url='https://ibb.co/Rp8spdjz',
                 title='按鈕樣板示範',
                 text='請選擇：',
                 actions=[
@@ -111,7 +111,7 @@ def sendCarousel(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        thumbnail_image_url='https://ibb.co/0RPKY2Hp',
                         title='唇彩',
                         text='讓fwee更貼近你的心情',
                         actions=[
