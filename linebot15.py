@@ -35,7 +35,7 @@ def handle_message(event):
         sendPizza(event)
     elif msg == '@yes':
         sendYes(event)
-    elif msg == '@轉盤':
+    elif msg == '@商品推薦':
         sendCarousel(event)
     elif msg == '@確認':
         sendConfirm(event)
@@ -59,7 +59,7 @@ def sendButton(event):
         message = TemplateSendMessage(
             alt_text='按鈕樣板',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://i.postimg.cc/sDRXt9tZ/temp-Imageg1m-UZf.avif',
+                thumbnail_image_url='https://i.postimg.cc/C1gtjWbL/temp-Image-Fw8-QF5.avif',
                 title='按鈕樣板示範',
                 text='請選擇：',
                 actions=[
@@ -69,7 +69,7 @@ def sendButton(event):
                     ),
                     URITemplateAction(
                         label='連結網頁',
-                        uri='http://www.e-happy.com.tw'
+                        uri='https://shopee.tw/fwee.official.tw?is_from_login=true'
                     ),
                     PostbackTemplateAction(
                         label='回傳訊息',
@@ -162,14 +162,14 @@ def sendImgCarousel(event):
             template=ImageCarouselTemplate(
                 columns=[
                     ImageCarouselColumn(
-                        image_url='https://i.imgur.com/4QfKuz1.png',
+                        image_url='https://i.postimg.cc/9fh5pRhh/temp-Imageep-LB9a.avif',
                         action=MessageTemplateAction(
                             label='唇彩',
                             text='為您推薦熱門唇彩'
                         )
                     ),
                     ImageCarouselColumn(
-                        image_url='https://i.imgur.com/qaAdBkR.png',
+                        image_url='https://i.postimg.cc/vmFMN25C/temp-Imagew73-HEl.avif',
                         action=PostbackTemplateAction(
                             label='底妝',
                             data='action=sell&item=為您推薦熱門底妝'
