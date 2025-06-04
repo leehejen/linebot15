@@ -33,15 +33,15 @@ def handle_message(event):
     msg = event.message.text
     if msg == '@fwee':
         sendPizza(event)
-    elif msg == '@yes':
+    elif msg == '@進度查詢':
         sendYes(event)
     elif msg == '@商品推薦':
         sendCarousel(event)
-    elif msg == '@確認':
+    elif msg == '@訂單確認':
         sendConfirm(event)
-    elif msg == '@圖片轉盤':
+    elif msg == '@更多商品':
         sendImgCarousel(event)
-    elif msg == '@按鈕':
+    elif msg == '@最新資訊':
         sendButton(event)
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入指定指令。'))
@@ -57,22 +57,22 @@ def handle_postback(event):
 def sendButton(event):
     try:
         message = TemplateSendMessage(
-            alt_text='按鈕樣板',
+            alt_text='最新資訊',
             template=ButtonsTemplate(
                 thumbnail_image_url='https://i.postimg.cc/C1gtjWbL/temp-Image-Fw8-QF5.avif',
-                title='按鈕樣板示範',
+                title='最新資訊',
                 text='請選擇：',
                 actions=[
-                    MessageTemplateAction(
-                        label='文字訊息!',
-                        text='@fwee'
+                     URITemplateAction(
+                        label='賣場連結',
+                        uri=''https://shopee.tw/fwee.official.tw'
                     ),
                     URITemplateAction(
-                        label='連結網頁',
+                        label='官網連結',
                         uri='https://shopee.tw/fwee.official.tw?is_from_login=true'
                     ),
                     PostbackTemplateAction(
-                        label='回傳訊息',
+                        label='訂單確認',
                         data='action=buy'
                     )
                 ]
@@ -140,7 +140,7 @@ def sendCarousel(event):
                             ),
                             URITemplateAction(
                                 label='連結進入fwee的世界',
-                                uri='https://fwee.kr/product/list.html?cate_no=53'
+                                uri='https://shopee.tw/fwee.official.tw?shopCollection=251023033#product_list'
                             ),
                             PostbackTemplateAction(
                                 label='回傳訊息二',
