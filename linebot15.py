@@ -179,7 +179,7 @@ def sendImgCarousel(event):
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/vmFMN25C/temp-Imagew73-HEl.avif',
-                        action=PostbackTemplateAction(
+                        action=MessageTemplateAction(
                             label='底妝',
                             text='fwee輕薄透亮底妝'
                         )
@@ -331,7 +331,7 @@ def sendrecommand2(event):
                         )
                     ),
                     ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/sx0xTHff/temp-Imagem-Bnn3-S.avif',
+                        image_url='https://i.postimg.cc/2jH1jydp/temp-Imagek-TEwi1.avif',
                         action=MessageTemplateAction(
                             label='看更多',
                             text='我想看底妝色號'
