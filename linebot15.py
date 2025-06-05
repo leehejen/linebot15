@@ -310,7 +310,7 @@ def sendrecommand1(event):
         
 def sendrecommand2(event):
     try:
-         message = TemplateSendMessage(
+        message = TemplateSendMessage(
             alt_text='色號推薦',
             template=ImageCarouselTemplate(
                 columns=[
