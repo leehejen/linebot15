@@ -316,13 +316,7 @@ def sendrecommand2(event):
                             text='Fair Glass'
                         )
                     ),
-                    ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/nVTDs0JP/temp-Imageo-Bkk-Ch.avif',
-                        action=MessageTemplateAction(
-                            label='玻璃光感氣墊粉底02 Nude Glass',
-                            text='Nude Glass'
-                        )
-                    ),
+                  
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/W1TC9NK3/temp-Imagek-E7aoi.avif',
                         action=MessageTemplateAction(
