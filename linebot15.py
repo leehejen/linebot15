@@ -302,6 +302,7 @@ def sendrecommand1(event):
     except Exception as e:
         print(e)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
+        
 def sendrecommand2(event):
     try:
         message = TemplateSendMessage(
