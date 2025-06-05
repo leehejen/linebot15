@@ -310,15 +310,16 @@ def sendrecommand1(event):
         
 def sendrecommand2(event):
     try:
-        message = TemplateSendMessage(
+         message = TemplateSendMessage(
             alt_text='色號推薦',
             template=ImageCarouselTemplate(
                 columns=[
                     ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/6prnYwZM/temp-Imageo1t-VL9.avif',
+                        image_url='https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif',
                         action=MessageTemplateAction(
-                            label='玻璃光感氣墊粉底01 Fair Glass',
-                            text='Fair Glass'
+                            label='ND03 Without',
+                            text='ND03'
+    
                         )
                     )
                 ]
