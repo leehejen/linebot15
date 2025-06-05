@@ -71,7 +71,7 @@ def sendButton(event):
                     ),
                     URITemplateAction(
                         label='官網連結',
-                        uri='https://shopee.tw/fwee.official.tw?is_from_login=true'
+                        uri='https://fwee.kr/?srsltid=AfmBOopZBEPJgaN6z6IzixXSj3S1prqa9jSieOBI07Kp_OccCmXmJHiN'
                     ),
                     PostbackTemplateAction(
                         label='訂單確認',
