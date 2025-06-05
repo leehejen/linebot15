@@ -8,6 +8,7 @@ from linebot.models import (
     CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
 )
 from urllib.parse import parse_qsl
+from linebot.models import FlexSendMessage
 
 import os
 
@@ -49,7 +50,9 @@ def handle_message(event):
         sendNo(event)
     elif msg == 'fwee熱賣系列唇彩':
         sendrecommand1(event)
-    elif msg in ['ND03 Without', 'PK01 Baby', 'ND04 My', 'ND03', 'PK01', 'ND04', '我想看色號', '看更多']:
+    elif msg == 'fwee輕薄透亮底妝':
+        sendrecommand2(event)
+    elif msg in ['ND03 Without', 'PK01 Baby', 'ND04 My', 'ND03', 'PK01', 'ND04', '我想看唇彩色號', '看更多']:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(
             text='👉 商品連結：\nhttps://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
         ))
@@ -188,7 +191,7 @@ def sendImgCarousel(event):
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-from linebot.models import FlexSendMessage
+
 
 def sendFweeRecommend(event):
     try:
@@ -289,7 +292,7 @@ def sendrecommand1(event):
                         image_url='https://i.postimg.cc/rwBhvh0m/temp-Image-Ly-Yua-P.avif',
                         action=MessageTemplateAction(
                             label='看更多',
-                            text='我想看色號'
+                            text='我想看唇彩色號'
                         )
                     )
                 ]
@@ -299,7 +302,47 @@ def sendrecommand1(event):
     except Exception as e:
         print(e)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
-
+def sendrecommand2(event):
+    try:
+        message = TemplateSendMessage(
+            alt_text='色號推薦',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/6prnYwZM/temp-Imageo1t-VL9.avif',
+                        action=MessageTemplateAction(
+                            label='玻璃光感氣墊粉底01 Fair Glass',
+                            text='Fair Glass'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/nVTDs0JP/temp-Imageo-Bkk-Ch.avif',
+                        action=MessageTemplateAction(
+                            label='玻璃光感氣墊粉底02 Nude Glass',
+                            text='Nude Glass'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/W1TC9NK3/temp-Imagek-E7aoi.avif',
+                        action=MessageTemplateAction(
+                            label='無瑕水煮蛋氣墊1.5 Peach',
+                            text='Peach'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/sx0xTHff/temp-Imagem-Bnn3-S.avif',
+                        action=MessageTemplateAction(
+                            label='看更多',
+                            text='我想看底妝色號'
+                        )
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+    except Exception as e:
+        print(e)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
 def sendNo(event):
     try:
         contents = {
