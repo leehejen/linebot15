@@ -250,25 +250,158 @@ def sendBack_sell(event, backdata):
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
         
+from linebot.models import FlexSendMessage
+
 def sendrecommand1(event):
     try:
-        message = TemplateSendMessage(
-            alt_text='色號推薦',
-            template=ImageCarouselTemplate(
-                columns=[
-                    ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif',
-                        action=MessageTemplateAction(
-                            label='ND03 Without',
-                            text='我想看 ND03 色號'
-                        )
-                    ),
+        message = FlexSendMessage(
+            alt_text='fwee 熱賣色號推薦',
+            contents={
+                "type": "carousel",
+                "contents": [
+                    {
+                        "type": "bubble",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif",
+                            "size": "full",
+                            "aspectRatio": "1.51:1",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846"
+                            }
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ND03 Without",
+                                    "weight": "bold",
+                                    "size": "xl"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "立即購買",
+                                        "uri": "https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846"
+                                    },
+                                    "style": "primary"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://i.postimg.cc/bJnBZxQr/temp-Image-Lb357-Z.avif",
+                            "size": "full",
+                            "aspectRatio": "1.51:1",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846"
+                            }
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "PK01 Baby",
+                                    "weight": "bold",
+                                    "size": "xl"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "立即購買",
+                                        "uri": "https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846"
+                                    },
+                                    "style": "primary"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://i.postimg.cc/ZKHDvKy8/temp-Image8-Ct-Sm-A.avif",
+                            "size": "full",
+                            "aspectRatio": "1.51:1",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846"
+                            }
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ND04 My",
+                                    "weight": "bold",
+                                    "size": "xl"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "立即購買",
+                                        "uri": "https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846"
+                                    },
+                                    "style": "primary"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://i.postimg.cc/rwBhvh0m/temp-Image-Ly-Yua-P.avif",
+                            "size": "full",
+                            "aspectRatio": "1.51:1",
+                            "aspectMode": "cover"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "md",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "探索更多色號",
+                                    "weight": "bold",
+                                    "size": "xl",
+                                    "align": "center"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "前往完整賣場",
+                                        "uri": "https://shopee.tw/fwee.official.tw"
+                                    },
+                                    "style": "primary"
+                                }
+                            ]
+                        }
+                    }
                 ]
-            )
+            }
         )
         line_bot_api.reply_message(event.reply_token, message)
     except Exception as e:
-        print(e)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
 
 if __name__ == '__main__':
