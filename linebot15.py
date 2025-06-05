@@ -231,7 +231,7 @@ def sendYes(event):
 def sendBack_buy(event, backdata=None):
     try:
         message = TextSendMessage(
-            text='感謝您的購買，商品將盡快寄出'
+            text='感謝您的購買，商品將盡快寄出\n'
                  '🧾 訂單查詢結果如下：\n\n'
                  '📦 訂單編號：#FWEE20250603\n'
                  '💄 購買產品：fwee 熱賣系列唇彩 - 柔霧玫瑰\n'
@@ -249,6 +249,7 @@ def sendBack_sell(event, backdata):
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+        
 def sendrecommand1(event):
     try:
         message = TemplateSendMessage(
@@ -257,15 +258,18 @@ def sendrecommand1(event):
                 columns=[
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif',
-                        action=MessageTemplateAction(
+                        action=URITemplateAction(
                             label='ND03 Without',
-                            url='https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
+                            uri='https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
                         )
                     ),
                 ]
             )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
 if __name__ == '__main__':
     app.run()
 
