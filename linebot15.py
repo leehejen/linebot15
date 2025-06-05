@@ -58,8 +58,8 @@ def handle_message(event):
         ))
     elif msg in ['Fair Glass', 'Nude Glass', 'Peach', '我想看底妝色號','底妝看更多']:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(
-            text='👉 底妝商品連結：\nhttps://shopee.tw/fwee.official.tw?shopCollection=251023033'
-    ))
+            text='👉 底妝商品連結：\nhttps://shopee.tw/fwee-玻璃光感氣墊粉底-Glass-ver.-—-5色-13g-i.1152063847.25577792640'
+        ))
 
 
    
@@ -321,7 +321,13 @@ def sendrecommand2(event):
                             text='Fair Glass'
                         )
                     ),
-                  
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/nVTDs0JP/temp-Imageo-Bkk-Ch.avif',
+                        action=MessageTemplateAction(
+                            label='玻璃光感氣墊粉底02 Nude Glass',
+                            text='Nude Glass'
+                        )
+                    ),
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/W1TC9NK3/temp-Imagek-E7aoi.avif',
                         action=MessageTemplateAction(
@@ -343,6 +349,7 @@ def sendrecommand2(event):
     except Exception as e:
         print(e)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
+        
 def sendNo(event):
     try:
         contents = {
