@@ -250,7 +250,7 @@ def sendBack_sell(event, backdata):
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 def sendrecommand1(event):
-      try:
+    try:
         message = TemplateSendMessage(
             alt_text='色號推薦',
             template=ImageCarouselTemplate(
@@ -263,6 +263,9 @@ def sendrecommand1(event):
                         )
                     ),
                 ]
+            )
+    except:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 if __name__ == '__main__':
     app.run()
 
