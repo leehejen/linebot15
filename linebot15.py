@@ -320,27 +320,6 @@ def sendrecommand2(event):
                             label='玻璃光感氣墊粉底01 Fair Glass',
                             text='Fair Glass'
                         )
-                    ),
-                    ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/nVTDs0JP/temp-Imageo-Bkk-Ch.avif',
-                        action=MessageTemplateAction(
-                            label='玻璃光感氣墊粉底02 Nude Glass',
-                            text='Nude Glass'
-                        )
-                    ),
-                    ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/W1TC9NK3/temp-Imagek-E7aoi.avif',
-                        action=MessageTemplateAction(
-                            label='無瑕水煮蛋氣墊1.5 Peach',
-                            text='Peach'
-                        )
-                    ),
-                    ImageCarouselColumn(
-                        image_url='https://i.postimg.cc/2jH1jydp/temp-Imagek-TEwi1.avif',
-                        action=MessageTemplateAction(
-                            label='底妝看更多',
-                            text='我想看底妝色號'
-                        )
                     )
                 ]
             )
