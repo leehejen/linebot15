@@ -45,12 +45,16 @@ def handle_message(event):
         sendButton(event)
     elif msg == '@yes':
         sendYes(event)
+    elif msg == '@no':
+        sendNo(event)
     elif msg == 'fwee熱賣系列唇彩':
         sendrecommand1(event)
     elif msg in ['ND03 Without', 'PK01 Baby', 'ND04 My', 'ND03', 'PK01', 'ND04', '我想看色號', '看更多']:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(
             text='👉 商品連結：\nhttps://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
         ))
+
+   
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入指定指令。'))
 
@@ -295,6 +299,67 @@ def sendrecommand1(event):
     except Exception as e:
         print(e)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
+
+def sendNo(event):
+    try:
+        contents = {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "md",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "推薦其他熱銷色號",
+                        "weight": "bold",
+                        "size": "lg",
+                        "align": "center"
+                    },
+                    {
+                        "type": "image",
+                        "url": "https://i.postimg.cc/fy90dvC3/temp-Image-Rmr-PDA.avif",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "1:1",
+                        "action": {
+                            "type": "uri",
+                            "uri": "https://shopee.tw/fwee.official.tw?categoryId=100630&entryPoint=ShopByPDP&itemId=24473108309&upstream=search"
+                        }
+                    },
+                    {
+                        "type": "image",
+                        "url": "https://i.postimg.cc/V6yg54Xh/temp-Imageo68z-F8.avif",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "1:1",
+                        "action": {
+                            "type": "uri",
+                            "uri": "https://shopee.tw/fwee.official.tw?categoryId=100630&entryPoint=ShopByPDP&itemId=24473108309&upstream=search"
+                        }
+                    },
+                    {
+                        "type": "image",
+                        "url": "https://i.postimg.cc/659xPQsS/m41121843036-1.jpg",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "1:1",
+                        "action": {
+                            "type": "uri",
+                            "uri": "https://shopee.tw/fwee.official.tw?categoryId=100630&entryPoint=ShopByPDP&itemId=24473108309&upstream=search"
+                        }
+                    }
+                ]
+            }
+        }
+
+        message = FlexSendMessage(alt_text='熱銷色號推薦', contents=contents)
+        line_bot_api.reply_message(event.reply_token, message)
+
+    except Exception as e:
+        print(e)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
+
 
 
 
