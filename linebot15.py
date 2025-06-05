@@ -258,17 +258,18 @@ def sendrecommand1(event):
                 columns=[
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif',
-                        action=URITemplateAction(
+                        action=MessageTemplateAction(
                             label='ND03 Without',
-                            uri='https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
+                            text='我想看 ND03 色號'
                         )
                     ),
                 ]
             )
         )
         line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+    except Exception as e:
+        print(e)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
 
 if __name__ == '__main__':
     app.run()
