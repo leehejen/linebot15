@@ -52,10 +52,15 @@ def handle_message(event):
         sendrecommand1(event)
     elif msg == 'fwee輕薄透亮底妝':
         sendrecommand2(event)
-    elif msg in ['ND03 Without', 'PK01 Baby', 'ND04 My', 'ND03', 'PK01', 'ND04', '我想看唇彩色號', '看更多']:
+    elif msg in ['ND03 Without', 'PK01 Baby', 'ND04 My', 'ND03', 'PK01', 'ND04', '我想看唇彩色號', '唇彩看更多']:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(
             text='👉 商品連結：\nhttps://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
         ))
+    elif msg in ['Fair Glass', 'Nude Glass', 'Peach', '我想看底妝色號','底妝看更多']:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(
+            text='👉 底妝商品連結：\nhttps://shopee.tw/fwee.official.tw?shopCollection=251023033'
+    ))
+
 
    
     else:
@@ -291,7 +296,7 @@ def sendrecommand1(event):
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/rwBhvh0m/temp-Image-Ly-Yua-P.avif',
                         action=MessageTemplateAction(
-                            label='看更多',
+                            label='唇彩看更多',
                             text='我想看唇彩色號'
                         )
                     )
@@ -327,7 +332,7 @@ def sendrecommand2(event):
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/2jH1jydp/temp-Imagek-TEwi1.avif',
                         action=MessageTemplateAction(
-                            label='看更多',
+                            label='底妝看更多',
                             text='我想看底妝色號'
                         )
                     )
