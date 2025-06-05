@@ -181,7 +181,7 @@ def sendImgCarousel(event):
                         image_url='https://i.postimg.cc/vmFMN25C/temp-Imagew73-HEl.avif',
                         action=PostbackTemplateAction(
                             label='底妝',
-                            data='action=sell&item=為您推薦熱門底妝'
+                            text='fwee輕薄透亮底妝'
                         )
                     )
                 ]
