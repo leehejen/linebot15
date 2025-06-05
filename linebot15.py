@@ -47,6 +47,10 @@ def handle_message(event):
         sendYes(event)
     elif msg == 'fwee熱賣系列唇彩':
         sendrecommand1(event)
+    elif msg in ['ND03 Without', 'PK01 Baby', 'ND04 My', 'ND03', 'PK01', 'ND04', '我想看色號', '看更多']:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(
+            text='👉 商品連結：\nhttps://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
+        ))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入指定指令。'))
 
@@ -252,34 +256,47 @@ def sendBack_sell(event, backdata):
 
 def sendrecommand1(event):
     try:
-        message = FlexSendMessage(
-            alt_text='fwee 熱賣色號推薦',
-            contents={
-                "type": "bubble",
-                "hero": {
-                    "type": "image",
-                    "url": "https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif",
-                    "size": "full",
-                    "aspectRatio": "1.51:1",
-                    "aspectMode": "cover"
-                },
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": "ND03 Without",
-                            "weight": "bold",
-                            "size": "xl"
-                        }
-                    ]
-                }
-            }
+        message = TemplateSendMessage(
+            alt_text='色號推薦',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif',
+                        action=MessageTemplateAction(
+                            label='ND03 Without',
+                            text='ND03'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/bJnBZxQr/temp-Image-Lb357-Z.avif',
+                        action=MessageTemplateAction(
+                            label='PK01 Baby',
+                            text='PK01'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/ZKHDvKy8/temp-Image8-Ct-Sm-A.avif',
+                        action=MessageTemplateAction(
+                            label='ND04 My',
+                            text='ND04'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/rwBhvh0m/temp-Image-Ly-Yua-P.avif',
+                        action=MessageTemplateAction(
+                            label='看更多',
+                            text='我想看色號'
+                        )
+                    )
+                ]
+            )
         )
         line_bot_api.reply_message(event.reply_token, message)
     except Exception as e:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'錯誤：{e}'))
+        print(e)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f'發生錯誤！{e}'))
+
+
 
 
 if __name__ == '__main__':
