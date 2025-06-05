@@ -45,6 +45,8 @@ def handle_message(event):
         sendButton(event)
     elif msg == '@yes':
         sendYes(event)
+    elif msg == 'fwee熱賣系列唇彩':
+        sendrecommand1(event)
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入指定指令。'))
 
@@ -125,10 +127,7 @@ def sendCarousel(event):
                                 label='連結進入fwee的世界',
                                 uri='https://shopee.tw/fwee.official.tw?shopCollection=251062841#product_list'
                             ),
-                            PostbackTemplateAction(
-                                label='回傳訊息一',
-                                data='action=sell&item=唇彩'
-                            ),
+                           
                         ]
                     ),
                     CarouselColumn(
@@ -144,10 +143,7 @@ def sendCarousel(event):
                                 label='連結進入fwee的世界',
                                 uri='https://shopee.tw/fwee.official.tw?shopCollection=251023033#product_list'
                             ),
-                            PostbackTemplateAction(
-                                label='回傳訊息二',
-                                data='action=sell&item=底妝'
-                            ),
+            
                         ]
                     )
                 ]
@@ -160,14 +156,14 @@ def sendCarousel(event):
 def sendImgCarousel(event):
     try:
         message = TemplateSendMessage(
-            alt_text='圖片轉盤樣板',
+            alt_text='商品推薦',
             template=ImageCarouselTemplate(
                 columns=[
                     ImageCarouselColumn(
                         image_url='https://i.postimg.cc/9fh5pRhh/temp-Imageep-LB9a.avif',
                         action=MessageTemplateAction(
                             label='唇彩',
-                            text='為您推薦熱門唇彩'
+                            text='fwee熱賣系列唇彩'
                         )
                     ),
                     ImageCarouselColumn(
@@ -253,7 +249,19 @@ def sendBack_sell(event, backdata):
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-
+def sendrecommand1(event):
+      try:
+        message = TemplateSendMessage(
+            alt_text='色號推薦',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://i.postimg.cc/k4WTJnmt/temp-Imagenx2-Yu-S.avif',
+                        action=MessageTemplateAction(
+                            label='ND03 Without',
+                            url='https://shopee.tw/fwee-唇頰兩用布丁膏-—-30色-5g-i.1152063847.24473108309?sp_atk=1e5c9706-7a96-48d0-bfcf-74e528f17846&xptdk=1e5c9706-7a96-48d0-bfcf-74e528f17846'
+                        )
+                    ),
 if __name__ == '__main__':
     app.run()
 
